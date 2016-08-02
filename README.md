@@ -3,7 +3,7 @@
 
 
 ## Usage
-Given two paths find the union between them.
+Given two paths create a new union path.
 
 
 
