@@ -1,2 +1,2 @@
 # path-union
-Create a union between two paths
+> Create a union between two paths
