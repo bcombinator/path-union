@@ -1,0 +1,28 @@
+{
+  "name": "path-union",
+  "version": "1.0.0",
+  "description": "Create a union between two paths",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidchase/path-union.git"
+  },
+  "keywords": [
+    "path",
+    "union",
+    "functional"
+  ],
+  "author": "David Chase <davidchase03@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidchase/path-union/issues"
+  },
+  "homepage": "https://github.com/davidchase/path-union#readme",
+  "devDependencies": {
+    "tap-spec": "4.1.1",
+    "tape": "4.6.0"
+  }
+}
