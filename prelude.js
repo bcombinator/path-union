@@ -20,9 +20,7 @@ const join = separator => xs => xs.join(separator)
 
 const split = separator => str => str.split(separator)
 
-const map = (fn, xs) => xs.map(fn)
-
-const chain = fn => xs => [].concat.apply([], map(fn, xs))
+const chain = fn => xs => [].concat.apply([], xs.map(fn))
 
 const of = Array.of.bind(Array)
 
