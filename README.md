@@ -1,6 +1,11 @@
 # path-union
 > Create a union between two paths
 
+## Install
+
+```sh
+npm install path-union
+```
 
 ## Usage
 Given two paths create a new union path.
