@@ -20,3 +20,6 @@ const dest = '/Users/davidchase/Desktop/github/path-union/dist'
 
 union(dest, src) // => /Users/davidchase/Desktop/github/path-union/dist/fixtures/packages
 ```
+
+## API
+#### union :: String => String => String
