@@ -1,6 +1,6 @@
 {
   "name": "path-union",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a union between two paths",
   "main": "index.js",
   "scripts": {
