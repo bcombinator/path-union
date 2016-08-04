@@ -23,3 +23,7 @@ union(dest, src) // => /Users/davidchase/Desktop/github/path-union/dist/fixtures
 
 ## API
 #### union :: String => String => String
+
+
+## Todo
+- [ ] add rollup + buble
