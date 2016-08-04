@@ -24,6 +24,10 @@ const chain = fn => xs => [].concat.apply([], xs.map(fn))
 
 const of = Array.of.bind(Array)
 
-const pathUnion = compose([join('/'), union, chain(split('/')), of])
+const filter = xs => fn => xs.filter(fn)
+
+const prepend = a => b => a.concat(b)
+
+const pathUnion = compose([prepend('/'), join('/'), filter(Boolean), union, chain(split('/')), of])
 
 exports.pathUnion = pathUnion
