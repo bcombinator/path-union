@@ -24,7 +24,7 @@ const chain = fn => xs => [].concat.apply([], xs.map(fn))
 
 const of = Array.of.bind(Array)
 
-const filter = xs => fn => xs.filter(fn)
+const filter = pred => xs => xs.filter(pred)
 
 const prepend = a => b => a.concat(b)
 
