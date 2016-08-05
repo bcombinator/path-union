@@ -29,4 +29,4 @@ union(dest, src) // => /Users/davidchase/Desktop/github/path-union/dist/fixtures
 
 
 ## Todo
-- [ ] add rollup + buble
+- [x] add rollup + buble
