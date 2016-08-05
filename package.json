@@ -1,28 +1,31 @@
 {
   "name": "path-union",
-  "version": "1.0.1",
   "description": "Create a union between two paths",
-  "main": "index.js",
-  "scripts": {
-    "test": "tape test.js | tap-spec"
+  "version": "1.0.1",
+  "author": "David Chase <davidchase03@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/davidchase/path-union/issues"
   },
+  "devDependencies": {
+    "buba": "1.0.6",
+    "rollup-plugin-buble": "0.12.1",
+    "tap-spec": "4.1.1",
+    "tape": "4.6.0"
+  },
+  "homepage": "https://github.com/davidchase/path-union#readme",
+  "keywords": [
+    "functional",
+    "path",
+    "union"
+  ],
+  "license": "MIT",
+  "main": "dist/path-union.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davidchase/path-union.git"
   },
-  "keywords": [
-    "path",
-    "union",
-    "functional"
-  ],
-  "author": "David Chase <davidchase03@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/davidchase/path-union/issues"
-  },
-  "homepage": "https://github.com/davidchase/path-union#readme",
-  "devDependencies": {
-    "tap-spec": "4.1.1",
-    "tape": "4.6.0"
+  "scripts": {
+    "build": "mkdir -p dist && rollup -c",
+    "test": "tape --require buba test.js | tap-spec"
   }
 }

@@ -1,9 +1,8 @@
 'use strict'
 
-const test = require('tape')
-const path = require('path')
-const union = require('./index')
-
+import test from 'tape'
+import path from 'path'
+import union from './index'
 
 test('it works', function(t){
   const expected = path.join(__dirname, 'output/src/images')

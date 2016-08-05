@@ -1,0 +1,32 @@
+'use strict';
+
+var _compose = function (f, g) { return function () {
+	var args = [], len = arguments.length;
+	while ( len-- ) args[ len ] = arguments[ len ];
+
+	return f(g.apply(void 0, args));
+; }	}
+
+var uniq = function (xs) { return xs.reduce(function (list, x) { return list.indexOf(x) === -1 ? list.concat(x) : list; }, []); }
+
+var concat = function (xs, list) { return xs.concat(list); }
+
+var compose = function (fns) { return fns.reduce(_compose); }
+
+var union = compose([uniq, concat])
+
+var join = function (separator) { return function (xs) { return xs.join(separator); }; }
+
+var split = function (separator) { return function (str) { return str.split(separator); }; }
+
+var chain = function (fn) { return function (xs) { return [].concat.apply([], xs.map(fn)); }; }
+
+var of = Array.of.bind(Array)
+
+var filter = function (pred) { return function (xs) { return xs.filter(pred); }; }
+
+var prepend = function (a) { return function (b) { return a.concat(b); }; }
+
+var index = compose([prepend('/'), join('/'), filter(Boolean), union, chain(split('/')), of])
+
+module.exports = index;

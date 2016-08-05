@@ -1,33 +1,23 @@
 'use strict'
 
-const _compose = function _compose(f, g) {
-    return function () {
-        return f(g.apply(null, arguments));
-    };
-};
-
-const compose = fns => fns.reduce(_compose)
+const _compose = (f, g) => (...args) => f(g(...args))
 
 const uniq = xs => xs.reduce((list, x) => list.indexOf(x) === -1 ? list.concat(x) : list, [])
 
-const identity = x => x
-
 const concat = (xs, list) => xs.concat(list)
 
-const union = compose([uniq, concat])
+export const compose = fns => fns.reduce(_compose)
 
-const join = separator => xs => xs.join(separator)
+export const union = compose([uniq, concat])
 
-const split = separator => str => str.split(separator)
+export const join = separator => xs => xs.join(separator)
 
-const chain = fn => xs => [].concat.apply([], xs.map(fn))
+export const split = separator => str => str.split(separator)
 
-const of = Array.of.bind(Array)
+export const chain = fn => xs => [].concat.apply([], xs.map(fn))
 
-const filter = pred => xs => xs.filter(pred)
+export const of = Array.of.bind(Array)
 
-const prepend = a => b => a.concat(b)
+export const filter = pred => xs => xs.filter(pred)
 
-const pathUnion = compose([prepend('/'), join('/'), filter(Boolean), union, chain(split('/')), of])
-
-exports.pathUnion = pathUnion
+export const prepend = a => b => a.concat(b)
