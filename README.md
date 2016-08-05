@@ -1,6 +1,9 @@
 # path-union
 > Create a union between two paths
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![npm version](https://img.shields.io/npm/v/path-union.svg)](https://www.npmjs.com/package/path-union)
+
 ## Install
 
 ```sh
