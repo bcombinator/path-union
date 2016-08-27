@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var _compose = function (f, g) { return function () {
 	var args = [], len = arguments.length;
 	while ( len-- ) args[ len ] = arguments[ len ];
@@ -11,9 +13,14 @@ var uniq = function (xs) { return xs.reduce(function (list, x) { return list.ind
 
 var concat = function (xs, list) { return xs.concat(list); }
 
-var compose = function (fns) { return fns.reduce(_compose); }
+var compose = function () {
+	var fns = [], len = arguments.length;
+	while ( len-- ) fns[ len ] = arguments[ len ];
 
-var union = compose([uniq, concat])
+	return fns.reduce(_compose);
+}
+
+var union = compose(uniq, concat)
 
 var join = function (separator) { return function (xs) { return xs.join(separator); }; }
 
@@ -27,6 +34,7 @@ var filter = function (pred) { return function (xs) { return xs.filter(pred); };
 
 var prepend = function (a) { return function (b) { return a.concat(b); }; }
 
-var index = compose([prepend('/'), join('/'), filter(Boolean), union, chain(split('/')), of])
+var pathUnion = compose(prepend('/'), join('/'), filter(Boolean), union, chain(split('/')), of)
 
-module.exports = index;
+exports.compose = compose;
+exports.union = pathUnion;

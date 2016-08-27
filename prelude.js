@@ -6,9 +6,9 @@ const uniq = xs => xs.reduce((list, x) => list.indexOf(x) === -1 ? list.concat(x
 
 const concat = (xs, list) => xs.concat(list)
 
-export const compose = fns => fns.reduce(_compose)
+export const compose = (...fns) => fns.reduce(_compose)
 
-export const union = compose([uniq, concat])
+export const union = compose(uniq, concat)
 
 export const join = separator => xs => xs.join(separator)
 

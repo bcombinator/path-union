@@ -16,12 +16,25 @@ Given two paths create a new union path.
 
 
 ```js
-const union = require('path-union')
+import {union} from 'path-union'
 
 const src = '/Users/davidchase/Desktop/github/path-union/fixtures/packages'
 const dest = '/Users/davidchase/Desktop/github/path-union/dist'
 
-union(dest, src) // => /Users/davidchase/Desktop/github/path-union/dist/fixtures/packages
+union(dest, src) // => '/Users/davidchase/Desktop/github/path-union/dist/fixtures/packages'
+```
+
+also as a bonus you can do functional composition right to left 🔥
+
+```js
+import {union, compose} from 'path-union'
+import {dirname} from 'path'
+
+const src = '/Users/davidchase/Desktop/github/path-union/fixtures/packages'
+const dest = '/Users/davidchase/Desktop/github/path-union/dist'
+
+
+compose(dirname, union)(dest, src) // => '/Users/davidchase/Desktop/github/path-union/dist/fixtures'
 ```
 
 ## API
