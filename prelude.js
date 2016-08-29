@@ -21,3 +21,5 @@ export const of = Array.of.bind(Array)
 export const filter = pred => xs => xs.filter(pred)
 
 export const prepend = a => b => a.concat(b)
+
+export const id = x => x

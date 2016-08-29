@@ -1,5 +1,5 @@
-import {compose, prepend, join, filter, union, chain, split, of} from './prelude'
+import {compose, prepend, join, filter, union, chain, split, of, id} from './prelude'
 
-const pathUnion = compose(prepend('/'), join('/'), filter(Boolean), union, chain(split('/')), of)
+const pathUnion = compose(prepend('/'), join('/'), filter(id), union, chain(split('/')), of)
 
 export {compose, pathUnion as union}
