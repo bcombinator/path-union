@@ -1,7 +1,7 @@
 {
   "name": "path-union",
   "description": "Create a union between two paths",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "David Chase <davidchase03@gmail.com>",
   "bugs": {
     "url": "https://github.com/davidchase/path-union/issues"
