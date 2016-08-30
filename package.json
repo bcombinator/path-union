@@ -28,5 +28,8 @@
   "scripts": {
     "build": "mkdir -p dist && rollup -c",
     "test": "standard index.js prelude.js && tape --require buba/register test.js | tap-spec"
+  },
+  "dependencies": {
+    "@bcombinator/prelude": "1.0.8"
   }
 }
